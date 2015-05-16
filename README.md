@@ -7,7 +7,7 @@ $ js-regenerate <file> > regenerated.js
 
 Installation (until published to npm):
 ```
-$ git clone git@git.nethouse.ru:experimental/js-regenerate.git
+$ git clone https://github.com/yumitsu/js-regenerate.git
 $ cd js-regenerate
 $ npm i -g
 ```
