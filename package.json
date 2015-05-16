@@ -1,10 +1,14 @@
 {
   "name": "js-regenerate",
-  "description": "",
-  "version": "0.0.0",
-  "private": true,
+  "description": "Tool to regenerate JavaScript code using esprima and escodegen",
+  "version": "0.0.1",
+  "private": false,
   "license": "MIT",
-  "author": "yumitsu",
+  "author": {
+    "name": "Alex 'yumitsu' Zinchenko",
+    "email": "yumitsu@users.noreply.github.com",
+    "url": "https://github.com/yumitsu"
+  },
   "dependencies": {
     "escodegen": "^1.6.1",
     "esprima": "^2.2.0"

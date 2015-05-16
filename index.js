@@ -4,7 +4,6 @@ var esprima   = require('esprima'),
     path      = require('path'),
     contents  = void(0),
     generated = void(0),
-    //file      = process.argv.slice(2).shift(),
     escgopts  = {
         comment: true,
         format: {
@@ -44,7 +43,7 @@ module.exports = function (file) {
 
         generated = escodegen.generate(contents, escgopts);
     } catch (e) {
-        console.error('jsregenerate: Error: ' + e.toString());
+        console.error('jsregenerate: ' + e.toString());
         process.exit(1);
     }
 
