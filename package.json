@@ -1,0 +1,13 @@
+{
+  "name": "js-regenerate",
+  "description": "",
+  "version": "0.0.0",
+  "private": true,
+  "license": "MIT",
+  "author": "yumitsu",
+  "dependencies": {
+    "escodegen": "^1.6.1",
+    "esprima": "^2.2.0"
+  },
+  "bin": "./bin/js-regenerate"
+}
