@@ -2,7 +2,8 @@ var esprima   = require('esprima'),
     escodegen = require('escodegen'),
     fs        = require('fs'),
     path      = require('path'),
-    contents  = void(0),
+    source    = void(0),
+    ast       = void(0),
     generated = void(0),
     escgOpts  = {
         comment: true,
@@ -31,19 +32,21 @@ module.exports = function (file) {
         }
     });
 
-    contents = fs.readFileSync(file);
+    source = fs.readFileSync(file);
 
     try {
-        contents = esprima.parse(contents, {
+        ast = esprima.parse(source, {
             raw: true,
             tokens: true,
             range: true,
             comment: true
         });
 
-        contents = escodegen.attachComments(contents, contents.comments, contents.tokens);
+        ast = escodegen.attachComments(ast, ast.comments, ast.tokens);
 
-        generated = escodegen.generate(contents, escgOpts);
+        escgOpts.sourceCode = source.toString();
+
+        generated = escodegen.generate(ast, escgOpts);
     } catch (e) {
         console.error('jsregenerate: ' + e.toString());
         process.exit(1);
