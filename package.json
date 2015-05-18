@@ -9,13 +9,17 @@
     "escodegen",
     "beautify"
   ],
-  "version": "0.0.1-1",
+  "version": "0.0.1-2",
   "private": false,
   "license": "MIT",
   "author": {
     "name": "Alex 'yumitsu' Zinchenko",
     "email": "yumitsu@users.noreply.github.com",
     "url": "https://github.com/yumitsu"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yumitsu/js-regenerate.git"
   },
   "bugs": {
     "url": "https://github.com/yumitsu/js-regenerate/issues"
