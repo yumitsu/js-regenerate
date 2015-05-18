@@ -4,13 +4,15 @@ var esprima   = require('esprima'),
     path      = require('path'),
     contents  = void(0),
     generated = void(0),
-    escgopts  = {
+    escgOpts  = {
         comment: true,
         format: {
             indent: {
-                style: '    '
+                style: '    ',
+                adjustMultilineComment: true
             },
-            quotes: 'single'
+            quotes: 'single',
+            preserveBlankLines: true
         }
     };
 
@@ -41,7 +43,7 @@ module.exports = function (file) {
 
         contents = escodegen.attachComments(contents, contents.comments, contents.tokens);
 
-        generated = escodegen.generate(contents, escgopts);
+        generated = escodegen.generate(contents, escgOpts);
     } catch (e) {
         console.error('jsregenerate: ' + e.toString());
         process.exit(1);
