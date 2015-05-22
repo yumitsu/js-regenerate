@@ -2,9 +2,11 @@
 
 ## Usage:
 ```
-$ js-regenerate <file> # Print code to output
-$ js-regenerate <file> > regenerated.js # Write output to file
+$ js-regenerate [options] <file>
 ```
+
+## Options:
+* `-f`, `--fix`: parse file and replace its original source with regenerated one.
 
 ## Installation:
 ```

@@ -1,6 +1,13 @@
 #!/usr/bin/env node
 
-var file       = process.argv.slice(2).shift(),
-    regenerate = require('../index.js');
+var regenerate = require('..'),
+    options = require('../lib/options.js'),
+    argv;
 
-regenerate(file);
+argv = options.parse();
+
+if (argv.file == null || argv.help) {
+    options.usage();
+} else {
+    regenerate(argv);
+}
