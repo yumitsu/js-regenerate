@@ -18,8 +18,8 @@ var esprima   = require('esprima'),
     };
 
 module.exports = function (file) {
-    if (file == null) {
-        console.error('jsregenerate: No file specified');
+    if (file === null) {
+        process.stderr.write('jsregenerate: No file specified');
         process.exit(1);
     }
 
@@ -27,7 +27,7 @@ module.exports = function (file) {
 
     fs.exists(file, function (stat) {
         if (!stat) {
-            console.error('jsregenerate: File not exists');
+            process.stderr.write('jsregenerate: File not exists');
             process.exit(1);
         }
     });
@@ -48,9 +48,14 @@ module.exports = function (file) {
 
         generated = escodegen.generate(ast, escgOpts);
     } catch (e) {
-        console.error('jsregenerate: ' + e.toString());
+        process.stderr.write('jsregenerate: ' + e.toString());
         process.exit(1);
     }
 
-    console.log(generated);
+    process.stdout.write(generated);
 }
+
+process.on('exit', function (code) {
+    var stream = code === 0 ? process.stdout : process.stderr;
+    stream.write('\n');
+});
