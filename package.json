@@ -9,7 +9,7 @@
     "escodegen",
     "beautify"
   ],
-  "version": "0.0.1-2",
+  "version": "0.0.1-3",
   "private": false,
   "license": "MIT",
   "author": {
